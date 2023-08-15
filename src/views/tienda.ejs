@@ -44,10 +44,12 @@
     <section id="producto1" class="section-p1">
         
         <div class="pro-contenedor">
+            
+            <% for( let i = 0; i < productos.length; i++ ) { %>
             <div class="pro" onclick="window.location.href='/productos';">
                 <img src="imagenes/productos/nike1-1.jpg" alt="">
                 <div class="des">
-                    <span>Nike</span>
+                    <span><%= productos[i].nombre_prod %></span>
                     <h5>Zapatilla Running Hombre Revolution 6</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
@@ -56,10 +58,11 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h4>S/. 245</h4>
+                    <h4><%= productos[i].precio_prod %></h4>
                 </div>
                 <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>            
+            </div> 
+            <% } %>          
             
         </div>
     </section>
