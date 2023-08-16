@@ -39,36 +39,8 @@
         
         <p>Ahorre más con cupones de hasta un 70 % de descuento! </p>
        
-    </section>
+    </section>       
     
-    
-    <button class="button-24" role="button"><a href="/tienda/add">Agregar Producto</a></button><a href="/tienda/add"></a>
-
-    <section id="producto1" class="section-p1">
-        
-        <div class="pro-contenedor">
-            
-            <% for( let i = 0; i < productos.length; i++ ) { %>
-            <div class="pro" onclick="window.location.href='/productos';">
-                <img src="imagenes/productos/nike1-1.jpg" alt="">
-                <div class="des">
-                    <span><%= productos[i].nombre_prod %></span>
-                    <h5>Zapatilla Running Hombre Revolution 6</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4><%= productos[i].precio_prod %></h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div> 
-            <% } %>          
-            
-        </div>
-    </section>    
 
     <%- include('partials/newsletter.ejs') %>
 
