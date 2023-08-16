@@ -57,6 +57,12 @@ button.normal {
     transition: 0.2s;
 }
 
+form{
+    width: 50%;
+    margin-left : 25%;
+    margin-top: 40px;
+ }
+
 /* boton de agregar producto */
 
 .button-24 {
