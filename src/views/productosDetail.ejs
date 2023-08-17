@@ -35,8 +35,8 @@
 
     <section id="prodetalles" class="section-p1">
         <div class="single-pro-image">
-            <img src="/imagenes/productos/nike1-1.jpg" width="100%" id="mainimg" alt="">            
-            
+            <img src="/imagenes/productos/nike1-1.jpg" width="100%" id="mainimg" alt="">
+
             <div class="small-img-group">
                 <div class="small-img-col">
                     <img src="/imagenes/productos/nike1-1.jpg" width="100%" class="small-img" alt="">
@@ -54,47 +54,69 @@
         </div>
 
         <div class="single-pro-detalles">
-            <h6>Inicio/Zapatillas/<%= producto.marca.nombre_marca %></h6>
-            <h4><%= producto.nombre_prod %></h4>
-            <h2><%= producto.precio_prod %></h2>
-            
+            <h6>Inicio/Zapatillas/<%= producto.marca.nombre_marca %>
+            </h6>
+            <h4>
+                <%= producto.nombre_prod %>
+            </h4>
+            <h2>
+                <%= producto.precio_prod %>
+            </h2>
+
             <button class="button-editar" role="button"><a href="/tienda/edit/<%= producto.id %>">Editar</a></button>
-            
-            <button class="button-borrar" role="button">Borrar</button>
-            
-            <h4>Detalles del producto</h4>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, officiis. Quam reiciendis quas
-                exercitationem aliquid praesentium reprehenderit dolorem pariatur a eum sit! Vel cumque voluptatum quae
-                hic incidunt aut facere.</span>
+            <!-- Trigger/Open The Modal -->
+            <button class="button-borrar" role="button" id="myBtn">Borrar</button>
+
+
+
         </div>
     </section>
 
-    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4> Estas seguro que quieres eliminar este producto? : <%= producto.nombre_prod %>
+            </h4>
+
+            <form action="/tienda/delete/<%= producto.id %>?_method=delete" method="post" style="text-align: center;">
+
+                <button class="button-borrar" type="submit">Eliminar Producto</button>
+                <button class="button-regresar"><a href="/tienda"></a>Listado de Productos</button>
+
+            </form>
+        </div>
+
+    </div>
+
+
 
     <%- include('partials/newsletter.ejs') %>
 
-    <%- include('partials/footer.ejs') %>
+        <%- include('partials/footer.ejs') %>
 
-    <script>
-        var MainImg = document.getElementById("mainimg");
-        var smallimg = document.getElementsByClassName("small-img")
+            <script>
+                var MainImg = document.getElementById("mainimg");
+                var smallimg = document.getElementsByClassName("small-img")
 
-        smallimg[0].onclick = function () {
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function () {
-            MainImg.src = smallimg[1].src;
-        }
-        smallimg[2].onclick = function () {
-            MainImg.src = smallimg[2].src;
-        }
-        smallimg[3].onclick = function () {
-            MainImg.src = smallimg[3].src;
-        }
+                smallimg[0].onclick = function () {
+                    MainImg.src = smallimg[0].src;
+                }
+                smallimg[1].onclick = function () {
+                    MainImg.src = smallimg[1].src;
+                }
+                smallimg[2].onclick = function () {
+                    MainImg.src = smallimg[2].src;
+                }
+                smallimg[3].onclick = function () {
+                    MainImg.src = smallimg[3].src;
+                }
 
-    </script>
+            </script>
 
-    <script src="/javascripts/script.js"></script>
+            <script src="/javascripts/script.js"></script>
 </body>
 
 </html>

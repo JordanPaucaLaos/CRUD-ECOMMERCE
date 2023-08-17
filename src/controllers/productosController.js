@@ -76,6 +76,15 @@ const productosController = {
         .then(()=> {
             return res.redirect('/tienda')})            
         .catch(error => res.send(error))
+    },
+
+    destroy: function(req, res ){
+        const productoId = req.params.id;
+        Productos.findByPk(productoId)
+        .then(()=> {
+           Productos.destroy ({where:{id: productoId}})  
+           return res.redirect ('/tienda')})      
+        .catch(error => res.send(error))
     }
 
     
