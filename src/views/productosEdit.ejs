@@ -46,11 +46,11 @@
         <fieldset>
             <div class="pure-control-group">
                 <label for="nombre_prod">Nombre</label>
-                <input type="text" name="nombre_prod" placeholder="Nombre" required />                
+                <input type="text" name="nombre_prod" value="<%= Producto.nombre_prod %>" required />                
             </div>
             <div class="pure-control-group">
                 <label for="precio_prod">Precio</label>
-                <input type="number" step="0.01" name="precio_prod" placeholder="Precio" required/>
+                <input type="number" step="0.01" name="precio_prod" value="<%= Producto.precio_prod %>"  required/>
             </div>            
             <div class="pure-control-group">
                 <label for="id_marca">Marca </label>
@@ -63,7 +63,7 @@
                 </select>                  
             </div>
             <div class="pure-control-group" style="text-align: center;">
-                <button class="pure-button" type="submit">Agregar</button>
+                <button class="pure-button" type="submit">Actualizar</button>
                 <a class="pure-button" href="/tienda">Volver</a>    
             </div> 
             
