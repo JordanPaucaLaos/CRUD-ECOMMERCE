@@ -63,6 +63,47 @@ form{
     margin-top: 40px;
  }
 
+/* boton de agregar borrar producto */
+
+.button-borrar {
+    background: darkred;
+    border: 1px solid darkred;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    
+  }
+  
+  .button-borrar:hover,
+  .button-borrar:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: darkred;
+  }
+  
+  .button-borrar:active {
+    opacity: .5;
+  }
+  
+
 /* boton de agregar producto */
 
 .button-24 {
@@ -698,10 +739,7 @@ footer .copyright {
 }
 
 
-#prodetalles .single-pro-detalles button{
-    background: #088178;
-    color: #fff;
-}
+
 
 #prodetalles .single-pro-detalles span{
     line-height: 25px;

@@ -8,9 +8,6 @@ const tiendaRouter = require('./src/routes/tiendaRoutes');
 const blogRouter = require('./src/routes/blogRoutes');
 const acercaRouter = require('./src/routes/acercaRoutes');
 const contactoRouter = require('./src/routes/contactoRoutes');
-const detalleproductoRouter = require('./src/routes/detalleproductoRoutes');
-
-
 
 // view engine setup
 app.set('views', path.resolve(__dirname, './src/views'));
@@ -26,7 +23,7 @@ app.use(tiendaRouter);
 app.use(blogRouter);
 app.use(acercaRouter);
 app.use(contactoRouter);
-app.use(detalleproductoRouter);
+
 
 
 app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));

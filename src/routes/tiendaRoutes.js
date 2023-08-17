@@ -3,8 +3,11 @@ const router = express.Router();
 const productosController = require("../controllers/productosController");
 
 router.get('/tienda',productosController.list);
+router.get('/tienda/detail/:id', productosController.detail);
 router.get('/tienda/add', productosController.add);
 router.post('/tienda/create', productosController.create);
+
+//router.get('/tienda/edit/:id', productosController.edit);
 
 /* GET home page. */
 //router.get('/tienda', function(req, res, next) {

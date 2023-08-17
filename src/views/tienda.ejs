@@ -49,11 +49,12 @@
         <div class="pro-contenedor">
             
             <% for( let i = 0; i < productos.length; i++ ) { %>
-            <div class="pro" onclick="window.location.href='/productos';">
+                
+                <div class="pro" onclick="window.location.href='/tienda/detail/<%= productos[i].id %>';">
                 <img src="imagenes/productos/nike1-1.jpg" alt="">
                 <div class="des">
-                    <span></span>
-                    <h5><%= productos[i].nombre_prod %></h5>
+                    <span><%= productos[i].marca.nombre_marca %></span>
+                    <h5><%= productos[i].nombre_prod %></h5>                    
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -74,7 +75,7 @@
 
     <%- include('partials/footer.ejs') %>
 
-    <script src="javascripts/script.js"></script>
+    <script src="/javascripts/script.js"></script>
 </body>
 
 </html>

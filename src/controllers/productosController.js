@@ -35,6 +35,32 @@ const productosController = {
         .then(()=> {
             return res.redirect('/tienda')})            
         .catch(error => res.send(error))
+    },
+
+    detail: (req, res) =>{
+        db.Producto.findByPk(req.params.id,
+        {
+           include: ["marca"] 
+        })
+
+            .then(producto =>{
+                res.render("productosDetail", {producto})
+                
+            })
+    },
+
+    edit: function(req, res) {
+        const productoId = req.params.id;
+        const promProductos = Productos.findByPk(productoId, { include: ["marca"] });
+        const promMarcas = Marcas.findAll();
+
+        Promise.all([promProductos, promMarcas])
+        .then(([Producto, allMarcas]) => {            
+            return res.render(path.resolve(__dirname, '..', 'views', 'productosEdit'), { Producto, allMarcas });
+          })
+          .catch(error => {
+            res.send(error);
+          });
     }
 }
 
