@@ -7,6 +7,10 @@
     font-family: 'Spartan', sans-serif;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 h1 {
     font-size: 50px;
     line-height: 64px;
@@ -63,7 +67,47 @@ form{
     margin-top: 40px;
  }
 
-/* boton de agregar borrar producto */
+ /* boton de editar producto */
+
+.button-editar {
+    background: #DAC605;
+    border: 1px solid #DAC605;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    
+  }
+  
+  .button-editar:hover,
+  .button-editar:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #DAC605;
+  }
+  
+  .button-editar:active {
+    opacity: .5;
+  }
+
+/* boton de borrar producto */
 
 .button-borrar {
     background: darkred;

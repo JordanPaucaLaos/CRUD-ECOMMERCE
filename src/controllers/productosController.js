@@ -59,9 +59,26 @@ const productosController = {
             return res.render(path.resolve(__dirname, '..', 'views', 'productosEdit'), { Producto, allMarcas });
           })
           .catch(error => {
-            res.send(error);
-          });
+            res.send(error)
+          })
+    },
+
+    update: function(req, res ){
+        const productoId = req.params.id;
+        Productos.update({
+            nombre_prod: req.body.nombre_prod,
+            precio_prod: req.body.precio_prod,
+            id_marca: req.body.id_marca,
+        },
+        {
+            where: { id: productoId}
+        })
+        .then(()=> {
+            return res.redirect('/tienda')})            
+        .catch(error => res.send(error))
     }
+
+    
 }
 
 module.exports = productosController;

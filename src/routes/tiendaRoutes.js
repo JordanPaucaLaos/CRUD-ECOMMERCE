@@ -6,8 +6,8 @@ router.get('/tienda',productosController.list);
 router.get('/tienda/detail/:id', productosController.detail);
 router.get('/tienda/add', productosController.add);
 router.post('/tienda/create', productosController.create);
-
-//router.get('/tienda/edit/:id', productosController.edit);
+router.get('/tienda/edit/:id', productosController.edit);
+router.put('/tienda/update/:id', productosController.update);
 
 /* GET home page. */
 //router.get('/tienda', function(req, res, next) {
