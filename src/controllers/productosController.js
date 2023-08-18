@@ -50,7 +50,7 @@ const productosController = {
                 nombre_prod: req.body.nombre_prod,
                 precio_prod: req.body.precio_prod,
                 id_marca: req.body.id_marca,
-                nombre_imagen: req.file ? req.file.filename : 'zapatilla_default.jpg',
+                nombre_imagen: req.file ? req.file.filename : 'zapatilla_default.jpg'
                 
             });      
             
@@ -96,6 +96,8 @@ const productosController = {
             nombre_prod: req.body.nombre_prod,
             precio_prod: req.body.precio_prod,
             id_marca: req.body.id_marca,
+            nombre_imagen: req.file.filename
+            //req.file ? req.file.filename : 'zapatilla_default.jpg',
         },
             {
                 where: { id: productoId }
