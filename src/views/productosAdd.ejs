@@ -42,7 +42,7 @@
        
     </section>     
 
-    <form class="pure-form pure-form-aligned" action="/tienda/create" method="post">
+    <form class="pure-form pure-form-aligned" action="/tienda/create" method="post" enctype="multipart/form-data">
         <fieldset>
             <div class="pure-control-group">
                 <label for="nombre_prod">Nombre del Producto</label>
@@ -68,7 +68,7 @@
             </div> 
             <div class = "camposregistro">
                 <label for="image">Imagen de Producto</label><br>
-                <input type="file" name="image" id="image">
+                <input type="file" name="file" id="input-files">
             </div>         
                 
         </fieldset>

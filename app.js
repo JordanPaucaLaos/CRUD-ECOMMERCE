@@ -9,6 +9,8 @@ const blogRouter = require('./src/routes/blogRoutes');
 const acercaRouter = require('./src/routes/acercaRoutes');
 const contactoRouter = require('./src/routes/contactoRoutes');
 
+global.__basedir = __dirname;
+
 // view engine setup
 app.set('views', path.resolve(__dirname, './src/views'));
 app.set('view engine', 'ejs');

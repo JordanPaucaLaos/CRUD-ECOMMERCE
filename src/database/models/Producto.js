@@ -16,7 +16,10 @@ module.exports = (Sequelize, DataTypes) => {
             allowNull: false
         },
         id_marca: DataTypes.BIGINT(11).UNSIGNED,
-        imagen: DataTypes.BLOB("long")
+        nombre_imagen: {
+            type: DataTypes.STRING(255),
+            allowNull: false
+        }
     };
     let config = {       
         timestamps: false
