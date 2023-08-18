@@ -51,7 +51,7 @@
             <% for( let i = 0; i < productos.length; i++ ) { %>
                 
                 <div class="pro" onclick="window.location.href='/tienda/detail/<%= productos[i].id %>';">
-                <img src="imagenes/productos/nike1-1.jpg" alt="">
+                <img src="imagenes/productos/<%= productos[i].nombre_imagen %>" alt="">
                 <div class="des">
                     <span><%= productos[i].marca.nombre_marca %></span>
                     <h5><%= productos[i].nombre_prod %></h5>                    
