@@ -42,7 +42,7 @@
        
     </section>     
 
-    <form class="pure-form pure-form-aligned" action="/tienda/update/<%= Producto.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <form class="pure-form pure-form-aligned" action="/tienda/update/<%= Producto.id %>?_method=PUT" method="post" enctype="multipart/form-data" autocomplete="off">
         <fieldset>
             <div class="pure-control-group">
                 <label for="nombre_prod">Nombre</label>
@@ -62,7 +62,9 @@
                     <% }); %>
                 </select>                  
             </div>
-            <div class = "camposregistro">
+            <img src="/imagenes/productos/<%= Producto.nombre_imagen %>" name="imagen_prod" width="100%" id="mainimg" alt="" hidden>
+            
+            <div class="pure-control-group">
                 <label for="image">Imagen de Producto</label><br>
                 <input type="file" name="file" id="input-files">
             </div> 

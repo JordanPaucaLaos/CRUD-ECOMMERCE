@@ -35,22 +35,7 @@
 
     <section id="prodetalles" class="section-p1">
         <div class="single-pro-image">
-            <img src="/imagenes/productos/nike1-1.jpg" width="100%" id="mainimg" alt="">
-
-            <div class="small-img-group">
-                <div class="small-img-col">
-                    <img src="/imagenes/productos/nike1-1.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/imagenes/productos/nike1-2.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/imagenes/productos/nike1-3.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/imagenes/productos/nike1-4.jpg" width="100%" class="small-img" alt="">
-                </div>
-            </div>
+            <img src="/imagenes/productos/<%= producto.nombre_imagen %>" width="100%" id="mainimg" alt="">            
         </div>
 
         <div class="single-pro-detalles">
@@ -81,10 +66,10 @@
             <h4> Estas seguro que quieres eliminar este producto? : <%= producto.nombre_prod %>
             </h4>
 
-            <form action="/tienda/delete/<%= producto.id %>?_method=delete" method="post" style="text-align: center;">
+            <form action="/tienda/delete/<%= producto.id %>?_method=delete" method="post" style="text-align: center;" autocomplete="off">
 
-                <button class="button-borrar" type="submit">Eliminar Producto</button>
-                <button class="button-regresar"><a href="/tienda"></a>Listado de Productos</button>
+                <button class="button-borrar" type="submit" name="borrar">Eliminar Producto</button>
+                <button class="button-regresar" name="listado"><a href="/tienda"></a>Listado de Productos</button>
 
             </form>
         </div>
@@ -98,21 +83,31 @@
         <%- include('partials/footer.ejs') %>
 
             <script>
-                var MainImg = document.getElementById("mainimg");
-                var smallimg = document.getElementsByClassName("small-img")
+                // Get the modal
+var modal = document.getElementById("myModal");
 
-                smallimg[0].onclick = function () {
-                    MainImg.src = smallimg[0].src;
-                }
-                smallimg[1].onclick = function () {
-                    MainImg.src = smallimg[1].src;
-                }
-                smallimg[2].onclick = function () {
-                    MainImg.src = smallimg[2].src;
-                }
-                smallimg[3].onclick = function () {
-                    MainImg.src = smallimg[3].src;
-                }
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
             </script>
 

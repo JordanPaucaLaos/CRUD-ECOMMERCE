@@ -14,7 +14,8 @@ const productosController = {
         })
 
             .then(productos => {
-                res.render("tienda", { productos })
+                res.render("tienda", { productos })                
+                
             })
     },
 
@@ -27,18 +28,7 @@ const productosController = {
                 return res.render(path.resolve(__dirname, '..', 'views', 'productosAdd'), { allMarcas })
             })
             .catch(error => res.send(error))
-    },
-    //store
-    /*create: function (req,res){
-        Productos.create({
-            nombre_prod: req.body.nombre_prod,
-            precio_prod: req.body.precio_prod,
-            id_marca: req.body.id_marca
-        })
-        .then(()=> {
-            return res.redirect('/tienda')})            
-        .catch(error => res.send(error))
-    },*/
+    },  
 
     create: function (req, res)  {
 
@@ -96,7 +86,7 @@ const productosController = {
             nombre_prod: req.body.nombre_prod,
             precio_prod: req.body.precio_prod,
             id_marca: req.body.id_marca,
-            nombre_imagen: req.file.filename
+            nombre_imagen: req.file ? req.file.filename :req.body.imagen_prod
             //req.file ? req.file.filename : 'zapatilla_default.jpg',
         },
             {
